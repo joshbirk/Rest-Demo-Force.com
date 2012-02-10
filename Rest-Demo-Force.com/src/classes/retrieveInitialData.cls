@@ -23,11 +23,11 @@ public with sharing class retrieveInitialData {
     	HttpResponse res = null;
 		String loginURL = 'https://login.salesforce.com/services/oauth2/token';
         
-        String client_id = '3MVG9rFJvQRVOvk5XuBEUFRLZ4PG8wv0lA5b0.SxxOI5KLTQy4WRdHPeiEnzstKrHyIXwn74EUQ88TsmxU3o.';
-        String clientSecret = '5113243390314994945';
-        String uName = 'rest.demo@rest.demo.com';
-        String pwd = 'secure224';
-        String securityToken = '4ybhburXtNeaKvcHlv41bpmWR';
+        String client_id = 'database.com Remote Access Consumer Key';
+        String clientSecret = 'database.com Remote Access Consumer Secret';
+        String uName = 'database.com username';
+        String pwd = 'database.com password';
+        String securityToken = 'database.com security token';
         
         try{
         	req = new Httprequest();
