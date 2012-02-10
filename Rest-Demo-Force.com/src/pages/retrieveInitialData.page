@@ -1,0 +1,11 @@
+<apex:page controller="retrieveInitialData">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Start" action="{!retrieveRemoteData}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
