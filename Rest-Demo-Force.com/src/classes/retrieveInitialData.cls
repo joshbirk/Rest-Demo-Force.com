@@ -31,7 +31,7 @@ public with sharing class retrieveInitialData {
 
 	public void retrieveRemoteData(){
 		RestUtility ru = new RestUtility();
-		if(ru.login()){
+		if(ru.login('remoteAccessConsuberId', 'remoteAccessClientSecret', 'dbUserName', 'password', 'securityToken')){
 			String qString = 'Select+Description__c,+Model_Number__c,+Part_Number__c+From+Widget__c';
 			String res = ru.getSOQLQuery(qString);
 			List<Widget__c> lst = parseData(res);

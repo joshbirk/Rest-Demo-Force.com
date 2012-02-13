@@ -29,33 +29,26 @@ OF THE POSSIBILITY OF SUCH DAMAGE.
 
 public with sharing class RestUtility {
 	
-	
 	private String access_token = '';
     private String instance_url = '';
     private String restEndPoint = '/services/data';
     private String apiVersion = '23.0';
 	
 	//Login to the Database.com instance and return an oAuth Token
-	public Boolean login(){
+	public Boolean login(String clientId, String clientSecret, String userName, String password, String securityToken){
 		Boolean retVal = false;
 		Http http = new Http(); 
     	HttpRequest req = new Httprequest();
     	HttpResponse res = null;
 		String loginURL = 'https://login.salesforce.com/services/oauth2/token';
         
-        String client_id = 'database.com Remote Access Consumer Key';
-        String clientSecret = 'database.com Remote Access Consumer Secret';
-        String uName = 'database.com username';
-        String pwd = 'database.com password';
-        String securityToken = 'database.com security token';
-        
         try{
         	req = new Httprequest();
 	        req.setEndpoint(loginUrl);
 	        req.setMethod('POST');
-	        String postBody = 'grant_type=password&username=' + uName 
-	        					+ '&password=' + pwd + securityToken 
-	        					+ '&client_id=' + client_id 
+	        String postBody = 'grant_type=password&username=' + userName 
+	        					+ '&password=' + password + securityToken 
+	        					+ '&client_id=' + clientId 
 	        					+ '&client_secret=' + clientSecret;
 	        req.setBody(postBody);            
 	        res = http.send(req); 
